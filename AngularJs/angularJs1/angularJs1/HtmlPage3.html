@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="mymodule">
+<head>
+    
+    <title></title>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/ListAndTable.js"></script>
+    <link href="angstyle.css" rel="stylesheet" />
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="mycontroller">
+    Select the Type:
+    <select ng-model="employeeView">
+        <option value="EmployeeList.html">List</option>
+        <option value="HtmlPage4.html" >Table</option>
+    </select>
+    <div ng-include="employeeView"></div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <title>My first Angular js </title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/App.js"></script>
+    <link href="angstyle.css" rel="stylesheet" />
+</head>
+<body ng-controller="myController">
+    <!--print from the java script obj value-->
+    <div>
+        {{message}}
+
+name:'David',age:'20'}.name}}<br />
+        <!--printing from n array-->
+        {{["kar","smi","poo"][2]}}
+    </div>
+    <div>
+        {{1==2}}<br />
+    </div>
+    <div>
+        10+20={{10+20}}
+    </div>
+        <h1>display country details</h1>
+        Country:{{country.name}}
+        Capital:{{country.capital}}
+        <img ng-src={{country.flag}} height="300px" width="100px" alt="img not found"/>
+        <div>
+        <h1>displays the table of employees</h1>
+        <table>
+        <thead>
+        <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        </tr>
+       </thead>
+        <tbody>
+        <!-- setting this false name is sorted in ascending order -->
+        <tr ng-repeat="employee in employees| orderBy:'name':true">
+        <td>{{employee.name|uppercase}}</td>
+        <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.salary|currency}}</td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li ng-repeat="country in countrydata" ng-init="parentindex=$index">
+         {{country.name}}-Index={{$index}}
+        <ul>
+        <li ng-repeat="cities in country.cities">
+        {{cities.name}}-parent index={{parentindex}}-Index={{$index}}
+        </li>
+        </ul>
+        </li>
+        </ul><br/><br/>
+        Reactive table
+        <table>
+        <thead>
+        <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        </tr>
+       </thead>
+        <tbody>
+        <!-- setting this false name is sorted in ascending order -->
+        <tr ng-repeat="employee in employees| orderBy:sortcolumn">
+        <td>{{employee.name|uppercase}}</td>
+        <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.salary|currency}}</td>
+        </tr>
+        </tbody>
+        </table>
+         OrderBy:<select ng-model="sortcolumn">
+        <option value="name">Name ASC</option>
+        <option value="DOB">DOB ASC</option>
+        <option value="gender">gender ASC</option>
+        <option value="salary">salary ASC</option>
+        </select>
+        <table>
+        <thead>
+        <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        </tr>
+       </thead>
+        <tbody>
+        <!-- setting this false name is sorted in ascending order -->
+        <tr ng-repeat="employee in employees| orderBy:sortcolumn">
+        <td>{{employee.name|uppercase}}</td>
+        <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.salary|currency}}</td>
+        </tr>
+        </tbody>
+        </table>
+       
+    
+       </div>
+</body>
+</html>
+        

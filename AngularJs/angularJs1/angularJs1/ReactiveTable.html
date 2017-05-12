@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/App.js"></script>
+    <link href="angstyle.css" rel="stylesheet" />
+  
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myController" >
+       
+        <h1> Reactive table:</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="sortData('name')">Name<div ng-class="getsortData('name')"></div></th>
+                    <th ng-click="sortData('DOB')">DOB<div ng-class="getsortData('DOB')"></div></th>
+                    <th ng-click="sortData('gender')">Gender<div ng-class="getsortData('gender')"></div></th>
+                    <th ng-click="sortData('salary')">Salary<div ng-class="getsortData('salary')"></div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- setting this false name is sorted in ascending order -->
+                <tr ng-repeat="employee in employees| orderBy:sortcolumn:reversesort">
+                    <td>{{employee.name|uppercase}}</td>
+                    <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.salary|currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+
+        <input type="text" placeholder="Search name" ng-model="searchText.name" />
+        <input type="text" placeholder="Search gender" ng-model="searchText.gender" />
+        <input type="checkbox" ng-model="exactmatch"/>Exact Match
+        <h1> Reactive table:</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th >Name</th>
+                    <th >DOB</th>
+                    <th>Gender</th>
+                    <th >Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- setting this false name is sorted in ascending order -->
+                <tr ng-repeat="employee in employees| filter:searchText:exactmatch">
+                    <td>{{employee.name|uppercase}}</td>
+                    <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.salary|currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1> custom search</h1>
+        <h1> Reactive table:</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- setting this false name is sorted in ascending order -->
+                <tr ng-repeat="employee in employees| filter:searchText:exactmatch">
+                    <td>{{employee.name|uppercase}}</td>
+                    <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.salary|currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    <h1> match multiple filters</h1>
+        <input type="text" placeholder="Search name and gender" ng-model="searchText" />
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- setting this false name is sorted in ascending order -->
+                <tr ng-repeat="employee in employees| filter:search">
+                    <td>{{employee.name|uppercase}}</td>
+                    <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.salary|currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+</html>

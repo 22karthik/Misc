@@ -1,0 +1,20 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- setting this false name is sorted in ascending order -->
+        <tr ng-repeat="employee in employee| filter:searchText:exactmatch">
+            <td>{{employee.name|uppercase}}</td>
+            <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.salary|currency}}</td>
+        </tr>
+    </tbody>
+</table>
+

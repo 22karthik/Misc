@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+
+    <script src="Scripts/script.js"></script>
+    <link href="angstyle.css" rel="stylesheet" />
+
+</head>
+<body ng-app="mymodule">
+    <div ng-controller="mycontroller">
+        <!-- mask and un mask the elemnets-->
+        <h1> Reactive table:</h1>
+        <input type="checkbox" ng-model="hidesalary" />Hide Salary
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="sortData('name')">Name<div ng-class="getsortData('name')"></div></th>
+                    <th ng-click="sortData('DOB')">DOB<div ng-class="getsortData('DOB')"></div></th>
+                    <th ng-click="sortData('gender')">Gender<div ng-class="getsortData('gender')"></div></th>
+                    <th ng-show="hidesalary">Salary</th>
+                    <th ng-hide="hidesalary">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- setting this false name is sorted in ascending order -->
+                <tr ng-repeat="employee in employee">
+                    <td>{{employee.name|uppercase}}</td>
+                    <td>{{employee.DOB|date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender|gender}}</td>
+                    <td ng-hide="hidesalary">{{employee.salary|currency}}</td>
+                    <td ng-show="hidesalary">####</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</body>
+</html>

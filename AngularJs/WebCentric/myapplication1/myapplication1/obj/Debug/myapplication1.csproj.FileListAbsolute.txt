@@ -1,0 +1,14 @@
+J:\angularjs\WebCentric\myapplication1\myapplication1\bin\Debug\myapplication1.exe.config
+J:\angularjs\WebCentric\myapplication1\myapplication1\bin\Debug\myapplication1.exe
+J:\angularjs\WebCentric\myapplication1\myapplication1\bin\Debug\myapplication1.pdb
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1.csprojResolveAssemblyReference.cache
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\MainWindow.g.cs
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\App.g.cs
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1_MarkupCompile.cache
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1_MarkupCompile.lref
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\MainWindow.baml
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1.g.resources
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1.Properties.Resources.resources
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1.csproj.GenerateResource.Cache
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1.exe
+J:\angularjs\WebCentric\myapplication1\myapplication1\obj\Debug\myapplication1.pdb
